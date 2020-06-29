@@ -6,6 +6,9 @@ public class DestroyerController : MonoBehaviour
 {
      void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(other.gameObject);
+        if (other.name != "Barrier")
+        {
+            Destroy(other.gameObject);
+        }
     }
 }

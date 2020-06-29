@@ -14,10 +14,13 @@ public class Score : MonoBehaviour
         score = 0;
         UpdateScore();
     }
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        score += starValue;
-        UpdateScore();
+        if (other.name != "Barrier")
+        {
+            score += starValue;
+            UpdateScore();
+        }
     }
     // Update is called once per frame
     void UpdateScore()
